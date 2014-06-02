@@ -1,0 +1,45 @@
+---
+
+# This is an Infochimps Simple Schema (ICSS).  It is a YAML file which
+# describes a dataset and its associated metadata.  Learn more about
+# Infochimps at
+#
+#   http://infochimps.org
+
+infochimps_schema:
+- schema_version: 0.4
+
+- title: Global Daily Weather Data
+- subtitle: Federal Climate Complex GSOD
+- uniqname: global_daily_weather_data
+- tags:
+  - weather
+  - global
+  - ncdc
+  - gsod 
+  - climate
+  - daily
+  - geodata
+  - geolocated
+  - humidity
+  - precipitation
+  - sunlight
+  - climate_change
+  - government
+  - temperature
+
+- sources:
+  - name: National Climactic Data Center
+    url: http://www.ncdc.noaa.gov/oa/ncdc.html
+    role: Original Source
+  - name: Philip (flip) Kromer
+    url: http://infochimp.org/flip
+    role: Uploaded to Infochimps
+
+- license
+  - name: Public Domain (Government Work)
+  - description: This dataset is in the public domain.    
+
+- notes:
+    description: |-
+      This is a collection of daily weather measurements collected across the globe from 1929 - 2009.
