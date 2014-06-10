@@ -86,8 +86,10 @@ class MRWeather(MRJob):
             if(len(vec)==1830):
                 tmax, tmin, tmean, prcp, sndp = vec[0:366],vec[366:2*366],vec[2*366:3*366],vec[3*366:4*366],vec[4*366:5*366]
                 tmax, tmin, tmean, prcp, sndp = tmax[0:365], tmin[0:365], tmean[0:365], prcp[0:365], sndp[0:365]
-            else:
+            elif(len(vec)==1825):
                 tmax, tmin, tmean, prcp, sndp = vec[0:365],vec[365:2*365],vec[2*365:3*365],vec[3*365:4*365],vec[4*365:5*365]
+            else:
+                raise ValueError("len(vec)="+str(len(vec)))
             tvar  = [z_scale("t_var",readDouble(x,9999.9)-readDouble(y,9999.9)) for (x,y) in zip(tmax,tmin)]
             tmean = [z_scale("temp",readDouble(x,9999.9)) for x in tmean]
             prcp  = [z_scale("prcp",readDouble(x,99.99)) for x in prcp]
